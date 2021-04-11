@@ -15,52 +15,22 @@ if [ -f ~/.gdbinit ] || [ -h ~/.gdbinit ]; then
     cp ~/.gdbinit ~/.gdbinit.back_up
 fi
 
-# download peda and decide whether to overwrite if exists
-if [ -d ~/peda ] || [ -h ~/.peda ]; then
-    echo "[-] PEDA found"
-    if [ $skip_peda = 'n' ]; then
-        rm -rf ~/peda
-        git clone https://github.com/longld/peda.git ~/peda
-    else
-        echo "PEDA skipped"
-    fi
-else
-    echo "[+] Downloading PEDA..."
-    git clone https://github.com/longld/peda.git ~/peda
-fi
 
-# download peda arm
-if [ -d ~/peda-arm ] || [ -h ~/.peda ]; then
-    echo "[-] PEDA ARM found"
-    if [ $skip_peda = 'n' ]; then
-        rm -rf ~/peda-arm
-	git clone https://github.com/alset0326/peda-arm.git
-    else
-	echo "PEDA ARM skipped"
-    fi
-else	    
-    echo "[+] Downloading PEDA ARM..."
-    git clone https://github.com/alset0326/peda-arm.git ~/peda-arm
-fi
+echo 'Downloading PEDA'
+git clone https://github.com/longld/peda.git ~/peda
+echo 'Done'
 
-# download pwndbg
-if [ -d ~/pwndbg ] || [ -h ~/.pwndbg ]; then
-    if [ $skip_pwndbg = 'n' ]; then
-        rm -rf ~/pwndbg
-        git clone https://github.com/pwndbg/pwndbg.git ~/pwndbg
+echo 'Downloading PEDA ARM'
+git clone https://github.com/alset0326/peda-arm.git  ~/peda-arm
+echo 'Done'
 
-        cd ~/pwndbg
-        ./setup.sh
-    else
-        echo "Pwndbg skipped"
-    fi
-else
-    echo "[+] Downloading Pwndbg..."
-    git clone https://github.com/pwndbg/pwndbg.git ~/pwndbg
-
+echo 'Downloading pwndbg'
+git clone https://github.com/pwndbg/pwndbg.git ~/pwndbg
     cd ~/pwndbg
     ./setup.sh
-fi
+echo 'Done'
+
+cd $installer_path
 
 # download gef
 echo "[+] Downloading GEF..."
