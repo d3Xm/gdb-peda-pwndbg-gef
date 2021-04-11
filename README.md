@@ -29,3 +29,7 @@ cd ~/gdb-peda-pwndbg-gef
 ```
 ./update.sh
 ```
+
+## Changelog
+2021-04-11
+added angelheap script to .gdbinit, removed "sudo" from original script to work in pwnbox.
