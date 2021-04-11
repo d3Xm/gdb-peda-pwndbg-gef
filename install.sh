@@ -80,11 +80,11 @@ cp gdbinit ~/.gdbinit
 
 {
   echo "[+] Creating files..."
-    sudo cp gdb-peda /usr/bin/gdb-peda &&\
-    sudo cp gdb-peda-arm /usr/bin/gdb-peda-arm &&\
-    sudo cp gdb-peda-intel /usr/bin/gdb-peda-intel &&\
-    sudo cp gdb-pwndbg /usr/bin/gdb-pwndbg &&\
-    sudo cp gdb-gef /usr/bin/gdb-gef
+    cp gdb-peda /usr/bin/gdb-peda &&\
+    cp gdb-peda-arm /usr/bin/gdb-peda-arm &&\
+    cp gdb-peda-intel /usr/bin/gdb-peda-intel &&\
+    cp gdb-pwndbg /usr/bin/gdb-pwndbg &&\
+    cp gdb-gef /usr/bin/gdb-gef
 } || {
   echo "[-] Permission denied"
     exit
@@ -92,7 +92,7 @@ cp gdbinit ~/.gdbinit
 
 {
   echo "[+] Setting permissions..."
-    sudo chmod +x /usr/bin/gdb-*
+    chmod +x /usr/bin/gdb-*
 } || {
   echo "[-] Permission denied"
     exit
