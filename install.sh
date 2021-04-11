@@ -18,8 +18,6 @@ fi
 # download peda and decide whether to overwrite if exists
 if [ -d ~/peda ] || [ -h ~/.peda ]; then
     echo "[-] PEDA found"
-    read -p "skip download to continue? (enter 'y' or 'n') " skip_peda
-
     if [ $skip_peda = 'n' ]; then
         rm -rf ~/peda
         git clone https://github.com/longld/peda.git ~/peda
@@ -34,8 +32,6 @@ fi
 # download peda arm
 if [ -d ~/peda-arm ] || [ -h ~/.peda ]; then
     echo "[-] PEDA ARM found"
-    read -p "skip download to continue? (enter 'y' or 'n') " skip_peda
-
     if [ $skip_peda = 'n' ]; then
         rm -rf ~/peda-arm
 	git clone https://github.com/alset0326/peda-arm.git
@@ -49,9 +45,6 @@ fi
 
 # download pwndbg
 if [ -d ~/pwndbg ] || [ -h ~/.pwndbg ]; then
-    echo "[-] Pwndbg found"
-    read -p "skip download to continue? (enter 'y' or 'n') " skip_pwndbg
-
     if [ $skip_pwndbg = 'n' ]; then
         rm -rf ~/pwndbg
         git clone https://github.com/pwndbg/pwndbg.git ~/pwndbg
