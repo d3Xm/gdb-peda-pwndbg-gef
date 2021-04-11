@@ -32,3 +32,11 @@ end
 document init-gef
 Initializes GEF (GDB Enhanced Features)
 end
+
+source ~/Pwngdb/angelheap/gdbinit.py
+define hook-run
+python
+import angelheap
+angelheap.init_angelheap()
+end
+end
