@@ -1,6 +1,7 @@
 # Pwndbg + GEF + Peda - One for all, and all for one
 
 This is a script which installs Pwndbg, GEF, and Peda GDB plugins in a single command.
+It is modified to run as root in a docker container. see https://github.com/d3Xm/pwnbox
 
 Run `install.sh` and then use one of the commands below to launch the corresponding GDB environment:
 
